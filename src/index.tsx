@@ -3,13 +3,15 @@ import * as React from 'react';
 import {
     IsomorphicApp,
     WebApp,
-    Route
+    Route,
+    Link
 } from "infrastructure-components";
+
 
 
 export default (
     <IsomorphicApp
-        stackName = "my_isomorphic_app"
+        stackName = "my-isomorphic-app"
         buildPath = 'build'
         assetsPath = 'assets'
         region='eu-west-1'>
@@ -23,6 +25,12 @@ export default (
                 path='/'
                 name='My Serverless Isomorphic React App'
                 render={(props) => <div>Hello World</div>}
+            />
+
+            <Route
+                path='/test'
+                name='My Serverless Isomorphic React App'
+                render={(props) => <Link to="/">Back to Home</Link>}
             />
 
         </WebApp>

@@ -4,7 +4,8 @@ import {
     IsomorphicApp,
     WebApp,
     Route,
-    Link
+    Link,
+    Environment
 } from "infrastructure-components";
 
 
@@ -15,6 +16,16 @@ export default (
         buildPath = 'build'
         assetsPath = 'assets'
         region='eu-west-1'>
+
+        <Environment
+            name="staging"
+            offlinePort={3001}
+        />
+
+        <Environment
+            name="prod"
+            domain="www.infrastructure-components.com"
+        />
 
         <WebApp
             id="main"

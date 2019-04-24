@@ -66,7 +66,7 @@ Changes at your source code require running `npm run build` before they become e
 
 ### Deploy your App to AWS
 
-The script `npm run deploy` deploys the whole application stack (CloudFormation, Lambda, S3, Api-Gateway, IAM) to AWS.
+The script `npm run deploy-{environment_name}` deploys the whole application stack (CloudFormation, Lambda, S3, Api-Gateway, IAM) to AWS.
 The `id` of your `IsomorphicApp` serves as basis for the resource-names within AWS.
 
 You must specify the credentials of a programmatic AWS account in your `.env` file, like:
@@ -83,11 +83,16 @@ This account needs to have at least the permissions of the following policy:
     "Statement": [
         {
             "Action": [
-                "s3:*",
                 "apigateway:*",
                 "lambda:*",
                 "logs:*",
                 "cloudformation:*",
+                "cloudfront:*",
+                "acm:ListCertificates",
+                "route53:ListHostedZones",
+                "route53:ListResourceRecordSets",
+                "route53:ChangeResourceRecordSets",
+                "route53:GetChange",
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:DeleteRolePolicy",
@@ -106,6 +111,9 @@ This account needs to have at least the permissions of the following policy:
 ```
 
 ## Help and Support
+
+Have a look at our [documentation](https://infrastructure-components.readthedocs.io).
+
 
 Infrastructure-Components are under active development. If you find a bug or need support of any kind,
 please have a look at our [Spectrum-Chat](https://spectrum.chat/infrastructure).

@@ -4,8 +4,6 @@
   "description": "",
   "scripts": {
     "build": "scripts build src/index.tsx",
-    "start": "scripts start src/index.tsx",
-    "deploy": "scripts .env deploy src/index.tsx dev",
     "main": "scripts app src/index.tsx main"
   },
   "repository": {
@@ -20,7 +18,7 @@
   "homepage": "https://github.com/infrastructure-components/isomorphic_example#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "infrastructure-components": "0.0.27",
+    "infrastructure-components": "0.1.28",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
@@ -29,7 +27,8 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "infrastructure-scripts": "0.0.27",
+    "infrastructure-scripts": "0.1.28",
+    "serverless-domain-manager": "^3.2.1",
     "serverless-offline": "^4.9.4"
   }
 }

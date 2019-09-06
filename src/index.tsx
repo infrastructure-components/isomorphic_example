@@ -1,14 +1,12 @@
-import * as React from 'react';
-
+import React from 'react';
+import "@babel/polyfill";
 import {
+    Environment,
     IsomorphicApp,
-    WebApp,
+    Middleware,
     Route,
-    Link,
-    Environment
+    WebApp,
 } from "infrastructure-components";
-
-
 
 export default (
     <IsomorphicApp
@@ -17,32 +15,26 @@ export default (
         assetsPath = 'assets'
         region='eu-west-1'>
 
-        <Environment
-            name="staging"
-            offlinePort={3001}
-        />
-
-        <Environment
-            name="prod"
-            domain="www.infrastructure-components.com"
-        />
+        <Environment name="dev"/>
 
         <WebApp
             id="main"
             path="*"
             method="GET">
 
-            <Route
-                path='/'
-                name='My Serverless Isomorphic React App'
-                render={(props) => <div>Hello World</div>}
+            <Middleware
+                callback={(req, res, next) => {
+                    console.log("this middleware runs on the server");
+                    next();
+                }}
             />
 
             <Route
-                path='/test'
-                name='My Serverless Isomorphic React App'
-                render={(props) => <Link to="/">Back to Home</Link>}
+                path='/'
+                name='My Isomorphic App'
+                render={(props) => <div>I support server side rendering!</div>}
             />
 
         </WebApp>
-</IsomorphicApp>);
+    </IsomorphicApp>
+);

@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
-    "infrastructure-components": "^0.3.0",
+    "infrastructure-components": "^0.3.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.10.2",
     "react-apollo": "^2.5.5",
@@ -38,10 +38,11 @@
     "universal-cookie": "^4.0.1"
   },
   "devDependencies": {
-    "infrastructure-scripts": "^0.3.0",
+    "infrastructure-scripts": "^0.3.1",
     "serverless-dynamodb-local": "^0.2.38",
     "serverless-offline": "^4.9.4",
     "serverless-pseudo-parameters": "^2.5.0",
+    "serverless-s3-local": "^0.5.3",
     "serverless-single-page-app-plugin": "^1.0.2"
   }
 }

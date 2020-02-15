@@ -34,7 +34,7 @@
     "react-helmet": "^5.2.0",
     "request": "^2.88.0",
     "serverless-http": "^2.1.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
     "universal-cookie": "^4.0.1"
   },
   "devDependencies": {
